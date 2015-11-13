@@ -1,0 +1,70 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: Technology and Stuff
+email: giba.dmb@gmail.com
+description: Blogging about technology and stuff.
+# the base hostname & protocol for your site
+# If your project is placed in https://github.com/yourname/yourname.github.io at master branch
+# Then, the 'url' is: http://yourname.github.io
+# If your project is placed in another repository as a gh-pages branch, like: https://github.com/yourname/projectname
+# Then, the 'url' is: http://yourname.github.io/projectname
+#url: https://ggarciajr.github.io/blog
+url:
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+markdown:    kramdown
+highlighter:  pygments
+excerpt_separator: <!--more-->
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Gilberto Garcia Jr
+  avatar: avatar.jpg
+  job: "Scala, Clojure & Haskell developer"
+  bio: "I'm a developer with a passion to learn new things. Java, Scala, Haskell, and Clojure are some of the languages I know. Philosophy, music, literature, sports, and surfing are my hobbies."
+  email: giba.dmb@gmail.com
+  disqus-shortname: ggarciajr
+  twitter: ggarciajr
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: ggarciajr
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: ggarciajr
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: ggarciajr
+  codepen: #username
+  toptal: connect-just-bright-software-freelancers
