@@ -11,7 +11,6 @@ description: Blogging about technology and stuff.
 # Then, the 'url' is: http://yourname.github.io
 # If your project is placed in another repository as a gh-pages branch, like: https://github.com/yourname/projectname
 # Then, the 'url' is: http://yourname.github.io/projectname
-#url: https://ggarciajr.github.io/blog
 url: http://ggarciajr.github.io/ggarcia.me
 
 #
@@ -46,7 +45,7 @@ owner:
   facebook: #username
   google:
     plus: #username
-    analytics:
+    analytics: UA-48622235-1
     verify:
     ad-client:
     ad-slot:
