@@ -11,7 +11,8 @@ description: Blogging about technology and stuff.
 # Then, the 'url' is: http://yourname.github.io
 # If your project is placed in another repository as a gh-pages branch, like: https://github.com/yourname/projectname
 # Then, the 'url' is: http://yourname.github.io/projectname
-url: http://ggarciajr.github.io/ggarcia.me
+#url: http://ggarciajr.github.io/ggarcia.me
+url: http://ggarcia.me
 
 #
 ###################################
@@ -21,6 +22,7 @@ url: http://ggarciajr.github.io/ggarcia.me
 markdown:    kramdown
 highlighter:  pygments
 excerpt_separator: <!--more-->
+highlighter: pygments
 
 kramdown:
   auto_ids: true
@@ -28,6 +30,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
+  pygments: true
 
 #
 ###################################
