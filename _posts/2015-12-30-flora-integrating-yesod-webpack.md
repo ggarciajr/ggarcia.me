@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flora Time Tracker - Part III"
+title: "Flora Time Tracker - Integrating Yesod and Webpack"
 excerpt: "Now, we will learn how to set up webpack and how to integrate it with yesod."
 date: 2015-12-30
 tags: [Time, Time Tracker, Haskell, Yesod, Haskell Web Application, webpack]

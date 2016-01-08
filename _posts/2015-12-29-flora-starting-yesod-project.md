@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flora Time Tracker - Part II"
+title: "Flora Time Tracker - Starting an Yesod Project"
 excerpt: "In this post we'll see how to create the skeleton for a new yesod project."
 date: 2015-12-29
 tags: [Time, Time Tracker, Haskell, Yesod, Haskell Web Application]

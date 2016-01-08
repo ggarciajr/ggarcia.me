@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Flora Time Tracker - Part I"
+title: "Flora Time Tracker - Project Goal"
 excerpt: "Flora is a time tracker that I built to learn how to build a Haskell web application integrated with the React stack."
 date: 2015-12-28
 tags: [Time, Time Tracker, Haskell, Yesod, Haskell Web Application]
