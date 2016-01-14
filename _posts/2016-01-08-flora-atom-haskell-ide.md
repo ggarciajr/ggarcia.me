@@ -27,10 +27,10 @@ The installation process has two steps. The first one is to install **ghc-mod**,
 
 You can modify the apm command to include or remove packages as you wish.
 
-~~~
+{% highlight bash %}
 stack install ghc-mod hlint stylish-haskell
 apm install language-haskell haskell-ghc-mod ide-haskell autocomplete-haskell
-~~~
+{% endhighlight %}
 
 ## Issues with *yesod devel*
 
@@ -42,7 +42,7 @@ The workaround, until yesod-bin is updated to use Stack directly, is to delete t
 
 To reload an application inside a **ghci** session we need to enter three commands:
 
-~~~
+{% highlight bash %}
 # when opening the session to load everyithing needed.
 :l app/DevelMain.hs
 
@@ -50,7 +50,7 @@ To reload an application inside a **ghci** session we need to enter three comman
 DevelMain.shutdown
 :l app/DevelMain.hs
 DevelMain.update
-~~~
+{% endhighlight %}
 
 We use **:l app/DevelMain.hs** instead of **:reload** because the former doesn't
 reload shakespeare templates.
@@ -60,10 +60,10 @@ very tedious but we can make our lives easier.
 
 Modify the .ghci file by including these lines onto the end of the file:
 
-~~~
+{% highlight bash %}
 :l app/DevelMain.hs
 :def hoge const $ return $ unlines ["DevelMain.shutdown",":l app/DevelMain.hs","DevelMain.update"]
-~~~
+{% endhighlight %}
 
 Then run the application via ghci:
 

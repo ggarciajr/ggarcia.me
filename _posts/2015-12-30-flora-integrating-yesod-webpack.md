@@ -15,9 +15,9 @@ if you don't have it installed already.
 Next thing we need to do is to install <a href="http://webpack.github.io/" target="_blank">webpack</a>.
 We do it by running the following command:
 
-~~~
+{% highlight bash %}
 npm install webpack
-~~~
+{% endhighlight %}
 
 Once you get webpack installed, it is time to configure it and make yesod aware of the
 artifacts produced by it.
@@ -58,9 +58,9 @@ called ***index.js***
 Lets run the following command in a shell to tell webpack to create the bundle.
 Note that the command should be run from the project's root folder.
 
-~~~
+{% highlight bash %}
 webpack
-~~~
+{% endhighlight %}
 
 If all succeed, you should see the ***bundle.js*** file inside the ***static/js***
 folder.
@@ -87,15 +87,15 @@ pc <- widgetToPageContent $ do
 The last thing is to make yesod aware that of changes in static folder so it
 can discover our new ***bundle.js*** file.
 
-~~~
+{% highlight bash %}
 touch Settings/StaticFiles.hs
-~~~
+{% endhighlight %}
 
 Run the project and go to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
 
-~~~
+{% highlight bash %}
 stack exec yesod devel
-~~~
+{% endhighlight %}
 
 You should see, in the javascript console of your browser, the sentence: ***webpack is working.***
 
