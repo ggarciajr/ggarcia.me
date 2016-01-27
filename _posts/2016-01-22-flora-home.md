@@ -3,7 +3,7 @@ layout: post
 title: "Flora Time Tracker - Building the home page"
 excerpt: "Use pureCss to build a nice and good looking home for the project."
 date: 2016-01-26
-tags: [Haskell, Stack, Test, PureCss, i18n]
+tags: [Haskell, Stack, PureCss, i18n]
 author: ggarciajr
 comments: true
 ---
