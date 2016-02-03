@@ -8,27 +8,22 @@ author: ggarciajr
 comments: true
 ---
 
-To update the dependencies we need to modify the **stack.yaml** to tell
-stack to use version 4.1 of the <a href="http://www.stackage.org/" target="_blank">Stackage</a> lts.
+To update the dependencies we need to modify the **stack.yaml** to tell stack to use version 4.1 of the <a href="http://www.stackage.org/" target="_blank">Stackage</a> lts.
 
-Stackage is a stable source of Haskell packages that guarantee that haskell
-packages build consistently, thus avoiding the **cabal hell** problem.
+Stackage is a stable source of Haskell packages that guarantee that haskell packages build consistently, thus avoiding the **cabal hell** problem.
 
-{% highlight diff %}
+```diff
 --- a/stack.yaml
 +++ b/stack.yaml
 @@ -1,7 +1,7 @@
- # For more information, see: https://github.com/commercialhaskell/stack/blob/release/doc/yaml_configuration.md
 
- # Specifies the GHC version and set of packages available (e.g., lts-3.5, nightly-2015-09-21, ghc-7.10.2)
 -resolver: lts-3.20
 +resolver: lts-4.1
-{% endhighlight %}
+```
 
-After updating the **stack.yaml** we need to remove the version constraints of
-our dependencies so we can use the versions specified by the Stackage lts.
+After updating the **stack.yaml** we need to remove the version constraints of our dependencies so we can use the versions specified by the Stackage lts.
 
-{% highlight diff %}
+```diff
 --- a/flora.cabal
 +++ b/flora.cabal
 @@ -48,40 +48,44 @@ library
@@ -119,14 +114,13 @@ our dependencies so we can use the versions specified by the Stackage lts.
 +                 , hspec
                   , classy-prelude
                   , classy-prelude-yesod
-{% endhighlight %}
+```
 
-If you don't want to remove the dependencies constraints, you'll need to update
-the constraints to match those in the Stackage lts.
+If you don't want to remove the dependencies constraints, you'll need to update the constraints to match those in the Stackage lts.
 
 We can rebuild the application once both files - **stack.yaml** and **flora cabal** - are updated. In order to do that, run the following commands:
 
-{% highlight bash %}
+```shell
 # setup stack to get the appropriate GHC
 stack setup
 
@@ -135,14 +129,14 @@ stack install yesod-bin-1.4.17 cabal-install
 
 # just to be sure, we are going to rebuild yesod-bin
 stack build yesod-bin-1.4.17 .
-{% endhighlight %}
+```
 
 Now we can run the application via ghci:
 
-{% highlight bash %}
+```shell
 stack ghci
 #only necessary when starting ghci
 :l app/DevelMain.hs
 # execute everytime you change a file or when you want to reload the application.
 :hoge
-{% endhighlight %}
+```

@@ -17,29 +17,24 @@ To code the new home page we are going to need:
 
 You can find the related changes on <a href="https://github.com/ggarciajr/flora/commit/4cbdc19c050c4a1910eaeb9cc4e909d468e9e4d9" target="_blank">github</a>.
 
-# Hamlet template and i18n
+### Hamlet template and i18n
 
-To use i18n inside hamlet templates we need to refer to a **\<prefixKey>** using
-the following syntax:
+To use i18n inside hamlet templates we need to refer to a **\<prefixKey>** using the following syntax:
 
-{% highlight haskell %}
+```haskell
 -- will render the value of the Title key for a given language.
 _{MsgTitle}
-{% endhighlight %}
+```
 
-Each key used in the hamlet file needs to be inserted in both **en.msg** and **pt-BR.msg**
-files otherwise the application will not compile.
+Each key used in the hamlet file needs to be inserted in both **en.msg** and **pt-BR.msg** files otherwise the application will not compile.
 
-# React component and i18n
+### React component and i18n
 
-The react components are outside of the Yesod rendering scope. This means that we
-cannot use **_{MsgSomeKey}** to get the internationalized text.
+The react components are outside of the Yesod rendering scope. This means that we cannot use **_{MsgSomeKey}** to get the internationalized text.
 
-The solution is to render the text needed by the component as **data-*** atributes
-of the html tag that will be the component container and pass the dataset attribute
-of the container as a property of the React component.
+The solution is to render the text needed by the component as **data-*** atributes of the html tag that will be the component container and pass the dataset attribute of the container as a property of the React component.
 
-{% highlight diff %}
+```diff
 +<div class="header" id="header"
 +     data-title=_{MsgTitle}
 +     data-home=_{MsgNavigationHome}
@@ -47,18 +42,15 @@ of the container as a property of the React component.
 +     data-sign-up="_{MsgNavigationSignUp}"
 +     data-sign-in="_{MsgNavigationSignIn}">
 +  <!--- navigation will be rendered here -->
-{% endhighlight %}
+```
 
-# Webpack and Saas
+### Webpack and Saas
 
-Webpack only understands javascript and in order to make it compile Saas files we
-need to **require** the Saas file in a javascript file.
+Webpack only understands javascript and in order to make it compile Saas files we need to **require** the Saas file in a javascript file.
 
-However, this will generate the css inside the javascript file. To extract the
-css from the javascript file into css files, we need to use a webpack plugin called
-**extract-text-webpack-pluginextract-text-webpack-plugin**.
+However, this will generate the css inside the javascript file. To extract the css from the javascript file into css files, we need to use a webpack plugin called **extract-text-webpack-pluginextract-text-webpack-plugin**.
 
-{% highlight diff %}
+```diff
 --- a/webpack.config.js
 +++ b/webpack.config.js
 @@ -1,4 +1,5 @@
@@ -86,46 +78,41 @@ css from the javascript file into css files, we need to use a webpack plugin cal
 +    new ExtractTextPlugin('../css/style.css', {allChunks: true})
 +  ]
  };
-{% endhighlight %}
+```
 
-# Testing with Karma
+### Testing with Karma
 
-The configuration of the test suite is composed by two files - **test.webpack.js**
-and **karma.conf.js** - The later is to configure Karma and to integrate it with
-Webpack. The former is to tell webpack that every file ending in **.test.js**
-is part of a test suite.
+The configuration of the test suite is composed by two files - **test.webpack.js** and **karma.conf.js** - The later is to configure Karma and to integrate it with Webpack. The former is to tell webpack that every file ending in **.test.js** is part of a test suite.
 
-The last thing to do is to add a script block in the **package.json** to tell
-**npm** to start karma when running the tests.
+The last thing to do is to add a script block in the **package.json** to tell **npm** to start karma when running the tests.
 
-{% highlight json %}
+```json
 "scripts": {
   "test": "karma start"
 }
-{% endhighlight %}
+```
 
 To run the tests we run the command below:
 
-{% highlight bash %}
+```shell
 -- runs the test suite.
 npm test
-{% endhighlight %}
+```
 
-# Testing with HSpec
+### Testing with HSpec
 
 To run the hspec tests we run the following command:
 
-{% highlight bash %}
+```shell
 -- runs the test suite.
 stack test
-{% endhighlight %}
+```
 
-# Rendering the React component
+### Rendering the React component
 
-To add the navigation component in the home page we need to modify the **index.js**
-file as follows:
+To add the navigation component in the home page we need to modify the **index.js** file as follows:
 
-{% highlight javascript %}
+```diff
 --- a/js/index.js
 +++ b/js/index.js
 @@ -1,4 +1,14 @@
@@ -143,15 +130,13 @@ file as follows:
 +    <Navigation language={navigationContainer.dataset}/>,
 +    navigationContainer
 +  );
-{% endhighlight %}
+```
 
-# Making Yesod aware of the css and javascript files
+### Making Yesod aware of the css and javascript files
 
-Webpack will create two files - **static/css/style.css** and **static/js/bundle.js** -
-and we need to modify the **Foundation.hs** file to configure Yesod to include
-those files in the final html.
+Webpack will create two files - **static/css/style.css** and **static/js/bundle.js** - and we need to modify the **Foundation.hs** file to configure Yesod to include those files in the final html.
 
-{% highlight diff %}
+```diff
 --- a/Foundation.hs
 +++ b/Foundation.hs
 @@ -65,7 +65,21 @@ instance Yesod App where
@@ -176,11 +161,10 @@ those files in the final html.
 +             ])
              $(widgetFile "default-layout")
          withUrlRenderer $(hamletFile "templates/default-layout-wrapper.hamlet")
-{% endhighlight %}
+```
 
-# Final result
+### Final result
 
-This is what you should see after starting the application and accessing
-<a href="http://localhost:3000" target="_blank">http://localhost:3000</a> on your browser.
+This is what you should see after starting the application and accessing <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> on your browser.
 
 <img src="/img/posts/flora-final-home.png"/>

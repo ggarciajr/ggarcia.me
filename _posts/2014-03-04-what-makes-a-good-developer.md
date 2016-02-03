@@ -30,8 +30,7 @@ A passionate developer will:
 * study algorithms, logic, and design patterns, so it will be able to produce better software
 * write about the lessons learned and turn experience into wisdom — his team will not forget hard-won lessons by the next morning.
 
-Passionate developers are the kind of people who always try to best the person they were yesterday.
-They know that today they are better than they were yesterday and, by tomorrow, they will be even better.
+Passionate developers are the kind of people who always try to best the person they were yesterday. They know that today they are better than they were yesterday and, by tomorrow, they will be even better.
 
 It's easy to see why most people think passion is something that a good or great developer must have: one can study and learn all of the skills necessary as long as they have the passion to summit new challenges and always continue improving.
 

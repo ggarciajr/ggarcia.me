@@ -13,7 +13,7 @@ To create the the free page and make it accessible from the home page we'll need
 * Create a new handler.
 * Link the home page and the free page.
 
-# Creating the new route
+### Creating the new route
 
 The creation of a new route involves the following steps:
 
@@ -23,7 +23,7 @@ The creation of a new route involves the following steps:
 * add the new module in the **exposed-modules** sections in the **floral.cabal** file.
 * create the page hamlet template file - **templates/free.hamlet**.
 
-{% highlight diff %}
+```diff
 --- /dev/null
 +++ b/Handler/Free.hs
 @@ -0,0 +1,13 @@
@@ -41,9 +41,9 @@ The creation of a new route involves the following steps:
 +        setTitleI MsgTitle
 +        $(widgetFile "free")
 
-{% endhighlight %}
+```
 
-{% highlight diff %}
+```diff
 --- a/config/routes
 +++ b/config/routes
 @@ -5,3 +5,5 @@
@@ -52,9 +52,9 @@ The creation of a new route involves the following steps:
  / HomeR GET
 +
 +/free                 FreeR GET
-{% endhighlight %}
+```
 
-{% highlight diff %}
+```diff
 --- a/Application.hs
 +++ b/Application.hs
 @@ -34,6 +34,7 @@ import System.Log.FastLogger                (defaultBufSize, newStdoutLoggerSet,
@@ -65,9 +65,9 @@ The creation of a new route involves the following steps:
 
  -- This line actually creates our YesodDispatch instance. It is the second half
  -- of the call to mkYesodData which occurs in Foundation.hs. Please see the
-{% endhighlight %}
+```
 
-{% highlight diff %}
+```diff
 --- a/flora.cabal
 +++ b/flora.cabal
 @@ -22,6 +22,7 @@ library
@@ -78,32 +78,29 @@ The creation of a new route involves the following steps:
 
      if flag(dev) || flag(library-only)
          cpp-options:   -DDEVELOPMENT
-{% endhighlight %}
+```
 
-{% highlight diff %}
+```diff
 --- /dev/null
 +++ b/templates/free.hamlet
 @@ -0,0 +1 @@
 +free
-{% endhighlight %}
+```
 
-# Linking the home and free session pages
+### Linking the home and free session pages
 
-To get the benefits of the type-safe URLs inside the React components, we will
-use the same approach as we used to make the navigation component internationlized.
+To get the benefits of the type-safe URLs inside the React components, we will use the same approach as we used to make the navigation component internationlized.
 
-Such approach consists in rendering the URLs as **data-*** attributes of the
-tag that is the container of the React component and pass them to the component as
-properties.
+Such approach consists in rendering the URLs as **data-*** attributes of the tag that is the container of the React component and pass them to the component as properties.
 
 To render the URL to the free route in hamlet templates we use the following syntax:
 
-{% highlight diff %}
+```diff
 -- Free is the name of the route. R is a suffix used by yesod.
 @{FreeR}
-{% endhighlight %}
+```
 
-{% highlight diff %}
+```diff
 --- a/templates/homepage.hamlet
 +++ b/templates/homepage.hamlet
 @@ -1,9 +1,11 @@
@@ -129,17 +126,14 @@ To render the URL to the free route in hamlet templates we use the following syn
        <p>
 -        <a href="#" class="pure-button primary">_{MsgRibbonTryForFree}
 +        <a href=@{FreeR} class="pure-button primary">_{MsgRibbonTryForFree}
-{% endhighlight %}
+```
 
-This change will force us to refactor how we create the Navigation component
-in the **index.js**
+This change will force us to refactor how we create the Navigation component in the **index.js**
 
-Since we added a prefix in the **data-*** attributes to organize them into
-attributes for language and attributes for links, we need to get only the
-appropriate ones for each property that the Navigation component requires - i.e:
-language and links.
+Since we added a prefix in the **data-*** attributes to organize them into attributes for language and attributes for links, we need to get only the
+appropriate ones for each property that the Navigation component requires - i.e: language and links.
 
-{% highlight diff %}
+```diff
 --- a/js/index.js
 +++ b/js/index.js
 @@ -1,14 +1,19 @@
@@ -163,14 +157,13 @@ language and links.
      navigationContainer
    );
  })();
-{% endhighlight %}
+```
 
-Note the use of the **DataSetUtils**. It is a class that has three functions to
-help us filter the **data-*** attributes and get only those we are interested in.
+Note the use of the **DataSetUtils**. It is a class that has three functions to help us filter the **data-*** attributes and get only those we are interested in.
 
 Here is the definition of the **DataSetUtils** class.
 
-{% highlight javascript %}
+```javascript
 /* Class to transform data-* attributes from HTML tags     */
 /* and transform them into an appropriate format to be fed */
 /* React components.                                       */
@@ -223,4 +216,4 @@ class DataSetUtils {
 }
 
 export default DataSetUtils;
-{% endhighlight %}
+```

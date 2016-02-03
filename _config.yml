@@ -20,9 +20,7 @@ url: http://ggarcia.me
 ####################################
 #
 markdown:    kramdown
-highlighter:  pygments
 excerpt_separator: <!--more-->
-highlighter: pygments
 
 kramdown:
   auto_ids: true
@@ -30,7 +28,8 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
-  pygments: true
+  input: GFM
+  syntax_highlighter: rouge
 
 #
 ###################################

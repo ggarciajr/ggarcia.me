@@ -8,9 +8,9 @@ author: ggarciajr
 comments: true
 ---
 
-A couple of years ago I heard about this great book about programming called "On writing well"<sup id="reference1"><a href="#footnote1">1</a></sup> by William Zinsser. The strangeness about this was that it was not a book about programming but a book about writing non-fiction. A book that is great to improve both coding and writing skills? That is too good to be true, I thought to myself.
+A couple of years ago I heard about this great book about programming called <a href="http://amzn.to/1T0mvyB" target="_blank">"On writing well"</a> by William Zinsser. The strangeness about this was that it was not a book about programming but a book about writing non-fiction. A book that is great to improve both coding and writing skills? That is too good to be true, I thought to myself.
 
-My curiosity was sky high. Given that I was about to start writing a book myself<sup id="reference1"><a href="#footnote2">2</a></sup> and that I'm always willing to improve my coding skills, I ordered a copy from Amazon and waited anxiously due to slow international shipping rates.
+My curiosity was sky high. Given that I was about to start writing a book myself - <a href="http://amzn.to/1OuRQpl" target="_blank">Lift Application Development Cookbook</a> - and that I'm  always willing to improve my coding skills, I ordered a copy from Amazon and waited anxiously due to slow international shipping rates.
 
 I started to read William Zinsser's book as soon as I got my hands on it and I was impressed. It was clear: no words laid without intention, no hard to follow sentences.
 
@@ -35,9 +35,3 @@ Think about all the greatest books you have read. They all had interesting stori
 Jumping into the code realm, this could mean that a great code is first and foremost concerned with solving a specific problem. The code should be the path from problem to the solution and written in a way that any programmer can follow the story told by the code.
 
 We can say that we have reached our goal if we succeed in writing clear, concise code that solves people problems. Otherwise, we need to keep pursuing it.
-
-
-<div class="footnotes">
-  <sup id="footnote1">1. <a href="http://amzn.to/1T0mvyB">On Writing Well, 30th Anniversary Edition: The Classic Guide to Writing Nonfiction</a> <a href="#reference1">↩</a></sup>
-  <sup id="footnote2">2. <a href="http://amzn.to/1OuRQpl">Lift Application Development Cookbook</a> <a href="#reference2">↩</a></sup>
-</div>
