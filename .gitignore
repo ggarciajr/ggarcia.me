@@ -3,3 +3,4 @@ _site
 _draft
 .envrc
 bin/
+_ignore-drafts

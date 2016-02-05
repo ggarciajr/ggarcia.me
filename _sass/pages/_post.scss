@@ -13,7 +13,6 @@
     top: 0;
   }
 }
-
 .image-credit {
   float: right;
   font-weight: bold;
@@ -22,45 +21,37 @@
   font-size: 13px;
   padding-right: 20px;
 }
-
 // Post Section
 section.post {
-	margin-bottom: 80px;
+  margin-bottom: 80px;
 }
-
 // Post title
-.post-title {
-
-}
-
+.post-title {}
 .post-title-link {
-	color: $primary;
-	font-size: 14px;
-	margin-left: 10px;
-	&:hover,
-	&:focus {
-		color: lighten($primary, 14%);
-	}
+  color: $primary;
+  font-size: 14px;
+  margin-left: 10px;
+  &:hover,
+  &:focus {
+    color: lighten($primary, 14%);
+  }
 }
-
 // Post meta
 .post-meta {
   font-size: 13px;
   font-weight: bold;
-	.post-date {
-		color: $secondary;
-	}
-	.post-cat {
-		text-transform: uppercase;
-		color: $warning;
-	}
+  .post-date {
+    color: $secondary;
+  }
+  .post-cat {
+    text-transform: uppercase;
+    color: $warning;
+  }
   .read-time {
     color: $primary;
   }
 }
-
 // Post content
-
 #post {
   padding-bottom: 50px;
   .post-header {
@@ -71,19 +62,48 @@ section.post {
     line-height: 2em;
   }
   img {
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     display: block;
     margin: 0 auto;
   }
+  .spacer {
+    margin: 60px auto 30px;
+    width: 400px;
+    position: relative;
+    .mask {
+      overflow: hidden;
+      height: 20px;
+      &:after {
+        content: '';
+        display: block;
+        margin: -25px auto 0;
+        width: 100%;
+        height: 25px;
+        border-radius: 125px / 12px;
+        box-shadow: 0 0 8px black;
+      }
+    }
+    span {
+      $size: 50px;
+      width: $size;
+      height: $size;
+      position: absolute;
+      bottom: 100%;
+      margin-bottom: -$size/2;
+      left: 50%;
+      margin-left: -$size/2;
+      border-radius: 100%;
+      box-shadow: 0 2px 4px #999;
+      background: white;
+    }
+  }
 }
-
 #page {
   padding-bottom: 50px;
   .page-header {
     margin: 50px auto;
   }
 }
-
 .post-navigation {
   background-color: #f6f6f6;
   @include box-shadow;
@@ -122,7 +142,6 @@ section.post {
     max-height: 500px;
   }
 }
-
 // Shares Buttons
 .share-buttons {
   padding-top: 1em;
