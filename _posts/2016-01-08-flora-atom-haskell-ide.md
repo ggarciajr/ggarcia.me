@@ -12,7 +12,7 @@ comments: true
 
 IDE-Haskell is a plugin for the Atom editor and it opens automatically whenever you open a haskell source file.
 
-Combine it with **language-haskell**, **haskell-ghc-mod**, **autocomplete-haskell** and you get a great IDE with support for autocompletion and linter your Haskell projects
+Combine it with **language-haskell**, **haskell-ghc-mod**, **autocomplete-haskell** and you get a great IDE with support for autocompletion and linter for your Haskell projects
 
 **Suggested Atom packages:**
 
