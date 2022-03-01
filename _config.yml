@@ -12,14 +12,14 @@ description: Blogging about technology and stuff.
 # If your project is placed in another repository as a gh-pages branch, like: https://github.com/yourname/projectname
 # Then, the 'url' is: http://yourname.github.io/projectname
 #url: http://ggarciajr.github.io/ggarcia.me
-url: http://ggarcia.me
+url: https://ggarcia.me
 
 #
 ###################################
 # Jekyll configuration
 ####################################
 #
-markdown:    kramdown
+markdown: kramdown
 excerpt_separator: <!--more-->
 
 kramdown:
